@@ -5,21 +5,18 @@ from math import log, pi
 
 def BoilingTime(m, t0, t1, e, r=2 / 3):
     """returns the boiling time [s] for the egg
-    
+
      m:    mass [g]
      t0:   egg temperature at time 0
      t1:   target egg temperature
      e:    elevation [m]
      r:    fraction of yolk compared to egg mass
-    
+
      All temperatures in °C
 """
     c = 3.7  # specific heat capacity
     rho = 1.038  # density
     kappa = 5.4e-3  # thermal conductivity
-    Hmv = 40.657  # enthalpy of vaporization
-    R = 8.314  # gas constant
-    P0 = 1013.25  # pressure at sea level
 
     # compute boiling time
     TW = boiltemp(e)

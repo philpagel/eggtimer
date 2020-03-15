@@ -1,0 +1,10 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    {% if title %}{{ title }}{% else %}Egg Timer{% endif %}
+{% endblock %}
+
+{% block content %}
+    {% block app_content %}
+    {% endblock app_content %}
+{% endblock content %}
