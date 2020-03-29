@@ -5,6 +5,17 @@
 {% endblock %}
 
 {% block content %}
-    {% block app_content %}
-    {% endblock app_content %}
+<div class="container">
+    <div class="col-sm-8">
+        {% with messages = get_flashed_messages(with_categories=true) %}                                                                              
+            {% if messages %}                                                                                                                         
+                {% for category, message in messages %}                                                                                               
+                    <div class="alert alert-{{ category }}" role="alert">{{ message }}</div>                                                          
+                {% endfor %}                                                                                                                          
+            {% endif %}                                                                                                                               
+        {% endwith %}                                                                                                                                 
+        {% block app_content %}                                                                                                                       
+        {% endblock %}                                                                                                                                
+    </div>
+</div>
 {% endblock content %}

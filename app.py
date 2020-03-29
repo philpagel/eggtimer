@@ -2,6 +2,7 @@ import os
 from flask import Flask, request, render_template
 from flask_wtf import FlaskForm
 from wtforms import IntegerField, SubmitField
+from wtforms.validators import ValidationError, DataRequired, NumberRange
 from flask_bootstrap import Bootstrap
 import eggtime
 
@@ -25,15 +26,38 @@ def home():
                 e=int(request.form["elevation"]),
             )
         )
-        #return f"Boiling time:  {m}min {s}sec"
         return render_template("eggtime.html", title="Egg timer", form=form, btime=(min, sec))
     else:
         return render_template("eggtime.html", title="Egg timer", form=form, btime=(0, 0))
 
 
 class EggForm(FlaskForm):
-    mass = IntegerField("Egg mass [g]", default=70)
-    start_temp = IntegerField("Start temperature [°C]", default=6)
-    target_temp = IntegerField("Target temperature [°C]", default=70)
-    elevation = IntegerField("Elevation [m]", default=0)
+    mass = IntegerField(
+            "Egg mass [g]", default=70, 
+            validators=[
+                DataRequired(), 
+                NumberRange(min=20, max=150, message="Mass must be in [20, 150]g")
+                ]
+            )
+    start_temp = IntegerField(
+            "Start temperature [°C]", default=6, 
+            validators=[
+                DataRequired(),
+                NumberRange(min=4, max=40, message="Start temperature must be in [4, 40] °C")
+                ]
+            )
+    target_temp = IntegerField(
+            "Target temperature [°C]", default=70, 
+            validators=[
+                DataRequired(),
+                NumberRange(min=30, max=90, message="Target temperature must be in [30, 90] °C")
+                ]
+            )
+    elevation = IntegerField(
+            "Elevation [m]", default=0, 
+            validators=[
+                DataRequired(),
+                NumberRange(min=0, max=8000, message="Elevation must be in [30, 90] m")
+                ]
+            )
     submit = SubmitField("Compute")

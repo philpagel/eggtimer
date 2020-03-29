@@ -2,18 +2,14 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <h1>Time your egg</h1>
+    <h1>Egg timer</h1>
+    <h2>Set Parameters</h2>
     <div>
-    <div class="row">
-        <div class="col-md-4">
-           <form class="form " method="post" role="form">
-               {{ wtf.quick_form(form) }}
-           </form> 
-        </div><br>
+       {{ wtf.quick_form(form, button_map={'submit':'primary'}) }}
     </div>
-    <div class="row">
+    <h2>Result</h2>
+    <div>
         Boiling time: {{ btime[0] }} min {{ btime[1] }} s
-    </div>
     </div>
 {% endblock %}
 
