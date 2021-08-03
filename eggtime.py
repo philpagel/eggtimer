@@ -50,6 +50,7 @@ def ms(seconds):
     """return the tupple (minutes, seconds) that corresponds to `seconds`
     """
 
+    seconds = int(round(seconds))
     m = round(seconds // 60)
     s = round(seconds % 60)
 
