@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 import os
 from flask import Flask, request, render_template
 from flask_wtf import FlaskForm
@@ -61,3 +62,7 @@ class EggForm(FlaskForm):
                 ]
             )
     submit = SubmitField("Compute")
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", debug=True)
