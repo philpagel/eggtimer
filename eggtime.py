@@ -69,7 +69,7 @@ def main(m, t0, t1, e):
     print(f"Starting temp: {t0} °C")
     print(f"Target temp:   {t1} °C")
     print(f"Elevation:     {e} m")
-    print(f"Boiling time:  {min}:{sec} (min:sec)")
+    print(f"Boiling time:  {min}:{sec:02d} (min:sec)")
 
 
 if __name__ == "__main__":
