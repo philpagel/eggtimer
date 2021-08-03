@@ -11,13 +11,11 @@ equations behind this, please go to Charles D. H. Williams'
 
 ## Dependencies
 
-This is a python 3 app. I use click for commandline option parsing. So make sure to
+This is a python 3 app.
 
-    pip install click
+`requirements.txt` includes all requirements. You can automatically install them:
 
-If you want to use the web app you will need flask, wtforms, flask_wtf and
-flask_bootstrap.
-
+    pip install -r requirements.txt
 
 ## command line usage
 
