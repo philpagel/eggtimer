@@ -9,14 +9,6 @@ equations behind this, please go to Charles D. H. Williams'
 [page](https://newton.ex.ac.uk/teaching/CDHW/egg/).
 
 
-## Dependencies
-
-This is a python 3 app.
-
-`requirements.txt` includes all requirements. You can automatically install them:
-
-    pip install -r requirements.txt
-
 ## command line usage
 
 You can run this from the command line like this:
@@ -40,6 +32,12 @@ for online use. Start it with
     flask run
 
 And point your favorite browser to the URL that flask tells you to use.
+
+## run with docker
+
+To run the flask app as a docker container, use the supplied `compose.yaml` file:
+
+    docker compose up
 
 
 ## Target temperatures

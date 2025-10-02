@@ -1,0 +1,8 @@
+services: 
+  web: 
+    restart: unless-stopped
+    build:
+     context: app
+     target: builder
+    ports: 
+      - '8002:5000'

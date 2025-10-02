@@ -34,7 +34,7 @@ def home():
 
 class EggForm(FlaskForm):
     mass = IntegerField(
-            "Egg mass [g]", default=70, 
+            "Egg mass [g]", default=60, 
             validators=[
                 DataRequired(), 
                 NumberRange(min=20, max=150, message="Mass must be in [20, 150]g")
@@ -48,7 +48,7 @@ class EggForm(FlaskForm):
                 ]
             )
     target_temp = IntegerField(
-            "Target temperature [°C]", default=70, 
+            "Target temperature [°C]", default=72, 
             validators=[
                 DataRequired(),
                 NumberRange(min=30, max=90, message="Target temperature must be in [30, 90] °C")
