@@ -9,6 +9,9 @@
     <div>
        {{ wtf.quick_form(form, button_map={'submit':'primary'}) }}
     </div>
+    {% if ((btime[0] != None) and (btime[1] != None))  %}
     <h2>Boiling time: {{ btime[0] }}:{{ btime[1] }} </h2>
+    {% endif  %}
+
 {% endblock %}
 

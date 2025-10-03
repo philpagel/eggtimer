@@ -33,10 +33,14 @@ typically `http://localhost:5000`
 
 ## Run with Docker
 
-To run the flask app as a docker container, use the supplied `compose.yaml` file
-and just launch everything like this:
+To run the flask app as a docker container, use the supplied `compose.yaml` file.
+First we need to build the image:
 
-    docker compose up
+    docker compose build
+
+And then we can launch it:
+
+    docker compose up -d
 
 Now connect as above.
 

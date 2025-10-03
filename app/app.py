@@ -29,7 +29,7 @@ def home():
         )
         return render_template("eggtime.html", title="Egg timer", form=form, btime=(min, sec))
     else:
-        return render_template("eggtime.html", title="Egg timer", form=form, btime=(0, 0))
+        return render_template("eggtime.html", title="Egg timer", form=form, btime=(None, None))
 
 
 class EggForm(FlaskForm):
