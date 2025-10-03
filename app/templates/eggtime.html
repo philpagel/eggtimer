@@ -2,14 +2,13 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <h1>Egg timer</h1>
-    <h2>Set Parameters</h2>
+    <h1>
+        <img src="{{ url_for('static', filename='egg.png') }}" width="50" />
+        Egg timer
+    </h1>
     <div>
        {{ wtf.quick_form(form, button_map={'submit':'primary'}) }}
     </div>
-    <h2>Result</h2>
-    <div>
-        Boiling time: {{ btime[0] }} min {{ btime[1] }} s
-    </div>
+    <h2>Boiling time: {{ btime[0] }}:{{ btime[1] }} </h2>
 {% endblock %}
 

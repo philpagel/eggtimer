@@ -1,10 +1,11 @@
 {% extends 'bootstrap/base.html' %}
 
 {% block title %}
-    {% if title %}{{ title }}{% else %}Egg Timer{% endif %}
+    {% if title %}{{ title }}{% else %}Egg Time{% endif %}
 {% endblock %}
 
 {% block content %}
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
 <div class="container">
     <div class="col-sm-8">
         {% with messages = get_flashed_messages(with_categories=true) %}                                                                              

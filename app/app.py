@@ -58,7 +58,7 @@ class EggForm(FlaskForm):
             "Elevation [m]", default=0, 
             validators=[
                 DataRequired(),
-                NumberRange(min=0, max=8000, message="Elevation must be in [30, 90] m")
+                NumberRange(min=0, max=8000, message="Elevation must be in [0, 8000] m")
                 ]
             )
     submit = SubmitField("Compute")

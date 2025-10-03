@@ -11,9 +11,9 @@ equations behind this, please go to Charles D. H. Williams'
 
 ## command line usage
 
-You can run this from the command line like this:
+You can run `eggtime.py` directly from the command line. 
 
-    ./eggtime.py
+    ./app/eggtime.py
 
 And this are the options you can set:
 
@@ -26,12 +26,14 @@ And this are the options you can set:
 
 ## Flask application
 
-For the graphically inclined, there is also a FLASK app that wraps the functionality 
+For the graphically inclined, there is a FLASK app that wraps the functionality 
 for online use. Start it with
 
+    cd app/
     flask run
 
-And point your favorite browser to the URL that flask tells you to use.
+And point your favorite browser to the URL that flask tells you to use, typically `http://localhost:5000`
+
 
 ## run with docker
 
@@ -42,7 +44,7 @@ To run the flask app as a docker container, use the supplied `compose.yaml` file
 
 ## Target temperatures
 
-I like softboiled eggs with a target temperature of 70°C. I did not work out a
+I like softboiled eggs with a target temperature of ~71°C. I did not work out a
 full table of temperatures and resulting texture. And accurately describing egg
 texture is somewhat tricky anyway. I recommend working backwards from what you
 already know: Start with the boiling time you used so far, weigh an egg and boil
@@ -51,3 +53,7 @@ time from there and get highly consistent results for any size egg in the
 future.
 
 Maybe I will put together a table at some point.
+
+## Image attribution
+
+<a href="https://www.flaticon.com/free-icons/boiled-egg" title="boiled egg icons">Boiled egg icons created by kawalanicon - Flaticon</a>
