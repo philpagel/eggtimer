@@ -1,6 +1,8 @@
+<img src="screenshot.png" style="width:50%">
+
 # Egg time
 
-This is a simple app for making perfect boiled eggs. Enter the eggs weight and
+This is a simple app for making perfect boiled eggs. Enter the egg's weight and
 starting temperature as well as the desired target temperature and get the
 perfect boiling time. You can read up on the background on my
 [blog](http://techbotch.org/blog/how-to-boil-an-egg/index.html#how-to-boil-an-egg)
@@ -9,9 +11,39 @@ equations behind this, please go to Charles D. H. Williams'
 [page](https://newton.ex.ac.uk/teaching/CDHW/egg/).
 
 
-## command line usage
+## Flask application
 
-You can run `eggtime.py` directly from the command line. 
+Create a `venv`, first and activate it:
+
+    python3 -m venv eggtime
+    source eggtime/bin/activate
+
+Install all requirements:
+
+    python3 -m pip install -f requirements.txt
+
+Now, you can launch the app as usual:
+
+    cd app/
+    flask run
+
+Point your favorite browser to the URL that flask tells you to use,
+typically `http://localhost:5000`
+
+
+## Run with Docker
+
+To run the flask app as a docker container, use the supplied `compose.yaml` file
+and just launch everything like this:
+
+    docker compose up
+
+Now connect as above.
+
+
+## Command line usage
+
+You can run `eggtime.py` directly from the command line:
 
     ./app/eggtime.py
 
@@ -22,24 +54,6 @@ And this are the options you can set:
       -t, --t1 INTEGER         Target temperature [°C]
       -e, --elevation INTEGER  Elevation over sea level [m]
       --help                   Show this message and exit.
-
-
-## Flask application
-
-For the graphically inclined, there is a FLASK app that wraps the functionality 
-for online use. Start it with
-
-    cd app/
-    flask run
-
-And point your favorite browser to the URL that flask tells you to use, typically `http://localhost:5000`
-
-
-## run with docker
-
-To run the flask app as a docker container, use the supplied `compose.yaml` file:
-
-    docker compose up
 
 
 ## Target temperatures
