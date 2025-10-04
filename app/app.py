@@ -48,14 +48,14 @@ class EggForm(FlaskForm):
                 ]
             )
     target_temp = IntegerField(
-            "Target temperature [°C]", default=72, 
+            "Target temperature [°C]", default=71, 
             validators=[
                 DataRequired(),
                 NumberRange(min=30, max=90, message="Target temperature must be in [30, 90] °C")
                 ]
             )
     elevation = IntegerField(
-            "Elevation [m]", default=0, 
+            "Elevation [m]", default=340, 
             validators=[
                 DataRequired(),
                 NumberRange(min=0, max=8000, message="Elevation must be in [0, 8000] m")

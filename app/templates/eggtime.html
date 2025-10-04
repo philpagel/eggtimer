@@ -6,12 +6,16 @@
         <img src="{{ url_for('static', filename='egg.png') }}" width="50" />
         Egg timer
     </h1>
+    <br>
     <div>
        {{ wtf.quick_form(form, button_map={'submit':'primary'}) }}
     </div>
     {% if ((btime[0] != None) and (btime[1] != None))  %}
-    <h2>Boiling time: {{ btime[0] }}:{{ btime[1] }} </h2>
+    <h3>Boiling time: &nbsp;&nbsp;{{ btime[0] }}:{{ btime[1] }} [min:s]</h3>
     {% endif  %}
-
+    
+    <br> <br> <br> <br> <br> <hr>
+    <a href="https://github.com/philpagel/eggtimer"><img src="{{ url_for('static', filename='github-mark.png') }}" height="20" /> philpagel/eggtimer</a>
+        
 {% endblock %}
 
